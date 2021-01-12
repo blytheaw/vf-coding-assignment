@@ -6,8 +6,8 @@ Resources:
       ServiceToken: YOUR_LAMBDA_ARN
       Region: !Ref AWS::Region
       AccountId: !Ref AWS::AccountId
-      APICodeUrl: https://github.com/blytheaw/vf-coding-assignment/releases/download/1/weather-api-function.zip
-      SPACodeUrl: https://github.com/blytheaw/vf-coding-assignment/releases/download/1/weather-app.zip
+      APICodeUrl: https://github.com/blytheaw/vf-coding-assignment/releases/download/2/weather-api-function.zip
+      SPACodeUrl: https://github.com/blytheaw/vf-coding-assignment/releases/download/2/weather-app.zip
       OpenWeatherApiKey: YOUR_OPENWEATHER_APIKEY
 Outputs:
   S3WebsiteUrl:

@@ -1,19 +1,19 @@
 # CloudFormation Custom Resource Deployment Process
 
-This project is meant to demonstrate a multi-project deployment process using a CloudFront Custom Resource. The specific requirements are found in `INSTRUCTIONS.md` within this repo. The project is broken up into three primary components:
+This project is meant to demonstrate a multi-project deployment process using a CloudFormatioon Custom Resource. The specific requirements are found in `INSTRUCTIONS.md` within this repo. The project is broken up into three primary components:
 
 - `weather-api/` - Lambda Function to be used with API Gateway that returns weather for Tulsa, OK from the OpenWeatherMap API
 - `weather-app/` - Simple Angular SPA that retrieves the weather data from the API and displays a subset of it on a page
-- `deployment/` - The CloudFront Custom Resource that deploys both projects and wires them up. The bulk of the code is here.
+- `deployment/` - The CloudFormatioon Custom Resource that deploys both projects and wires them up. The bulk of the code is here.
 
-In addition, there is a GitHub Actions workflow defined under `./github/workflows` that builds the code artifacts, creates a GitHub Release, and uploads the artifacts to the release. The deployment CloudFront resource downloads these artifacts for deployment.
+In addition, there is a GitHub Actions workflow defined under `./github/workflows` that builds the code artifacts, creates a GitHub Release, and uploads the artifacts to the release. The deployment CloudFormatioon resource downloads these artifacts for deployment.
 
 ## Setup
 
 ### Prerequisites:
 
-- You will need an AWS account with sufficient IAM permissions to build the resources in this project. Deploying the CloudFront Custom Resource requires the following high level permissions:
-  - Create CloudFront Stacks
+- You will need an AWS account with sufficient IAM permissions to build the resources in this project. Deploying the CloudFormatioon Custom Resource requires the following high level permissions:
+  - Create CloudFormatioon Stacks
   - Create IAM roles and pass them to Lambda functions
   - Create S3 Buckets and upload objects
   - Create and invoke Lambda Functionos
@@ -23,7 +23,7 @@ In addition, there is a GitHub Actions workflow defined under `./github/workflow
   - `npm install -g serverless`
 - Lastly, you will need an API Key for OpenWeatherMap API. You can create a free account and generate a key here: https://home.openweathermap.org/users/sign_up
 
-### Deploy the ClouodFront Custom Resource
+### Deploy the CloudFormatioon Custom Resource
 
 1. Navigate to the `deployment/` directory in a terminal
 2. Run `npm install` to download dependencies
@@ -43,8 +43,8 @@ Resources:
       ServiceToken: LAMBDA_ARN
       Region: !Ref AWS::Region
       AccountId: !Ref AWS::AccountId
-      APICodeUrl: https://github.com/blytheaw/vf-coding-assignment/releases/download/1/weather-api-function.zip
-      SPACodeUrl: https://github.com/blytheaw/vf-coding-assignment/releases/download/1/weather-app.zip
+      APICodeUrl: https://github.com/blytheaw/vf-coding-assignment/releases/download/2/weather-api-function.zip
+      SPACodeUrl: https://github.com/blytheaw/vf-coding-assignment/releases/download/2/weather-app.zip
       OpenWeatherApiKey: YOUR_OPENWEATHER_APIKEY
 Outputs:
   S3WebsiteUrl:
@@ -91,14 +91,14 @@ When CloudFormation sends a delete request to the custom resource, it will attem
 
 ## Lessons Learned
 
-1. CloudFront Custom Resources are very powerful, but they can also be tricky to test and debug due to how they work.
+1. CloudFormatioon Custom Resources are very powerful, but they can also be tricky to test and debug due to how they work.
 2. I learned a pretty clean way to do a sleep timer in NodeJS:
    ```
-   const promisify = require('promisify');
+   import { promisify } from "util";
    const sleep = promisify(setTimeout);
    await sleep(1000);
    ```
-3. `cfn-response` and similar libraries are helpful when dealing with CloudFront Custom Resources, but in some cases lack flexibility to modify the responses send to CloudFront.
+3. `cfn-response` and similar libraries are helpful when dealing with CloudFormatioon Custom Resources, but in some cases lack flexibility to modify the responses send to CloudFormatioon.
 4. Loading Angular configuration at runtime when the app initializes.
 
 ## Enhancements
