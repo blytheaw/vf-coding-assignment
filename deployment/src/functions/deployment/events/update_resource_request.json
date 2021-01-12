@@ -1,0 +1,23 @@
+{
+  "RequestType": "Update",
+  "RequestId": "unique id for this update request",
+  "ResponseURL": "pre-signed-url-for-update-response",
+  "ResourceType": "Custom::MyCustomResourceType",
+  "LogicalResourceId": "WeatherApp",
+  "StackId": "arn:aws:cloudformation:us-east-2:namespace:stack/stack-name/guid",
+  "PhysicalResourceId": "stack-name-guid",
+  "ResourceProperties": {
+    "Region": "us-east-1",
+    "AccountId": "YOUR_ACCOUNT_ID",
+    "APICodeUrl": "https://github.com/blytheaw/vf-coding-assignment/releases/download/1/weather-api-function.zip",
+    "SPACodeUrl": "https://github.com/blytheaw/vf-coding-assignment/releases/download/1/weather-app.zip",
+    "OpenWeatherApiKey": "YOUR_OPENWEATHER_APIKEY"
+  },
+  "OldResourceProperties": {
+    "Region": "us-east-1",
+    "AccountId": "YOUR_ACCOUNT_ID",
+    "APICodeUrl": "https://github.com/blytheaw/vf-coding-assignment/releases/download/1/weather-api-function.zip",
+    "SPACodeUrl": "https://github.com/blytheaw/vf-coding-assignment/releases/download/1/weather-app.zip",
+    "OpenWeatherApiKey": "YOUR_OPENWEATHER_APIKEY"
+  }
+}

@@ -1,0 +1,26 @@
+<div class="weather-display" *ngIf="weather | async as weatherData">
+    <div class="weather-detail">
+        Current Temperature: {{weatherData.temperature}} &#8457;
+    </div>
+    <div class="weather-detail">
+        Low: {{weatherData.tempMin}} &#8457;
+    </div>
+    <div class="weather-detail">
+        High: {{weatherData.tempMax}} &#8457;
+    </div>
+    <div class="weather-detail">
+        Summary: {{weatherData.main}}
+    </div>
+    <div class="weather-detail">
+        Descripttion: {{weatherData.description}}
+    </div>
+    <div class="weather-detail">
+        Wind Speed: {{weatherData.windSpeed}} miles/hour
+    </div>
+    <div class="weather-detail">
+        Sunrise: {{weatherData.sunrise | date: 'shortTime' }}
+    </div>
+    <div class="weather-detail">
+        Sunset: {{weatherData.sunset | date: 'shortTime' }}
+    </div>
+</div>
