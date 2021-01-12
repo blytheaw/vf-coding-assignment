@@ -1,6 +1,6 @@
 # CloudFormation Custom Resource Deployment Process
 
-This project is meant to demonstrate a multi-project deployment process using a CloudFormatioon Custom Resource. The specific requirements are found in `INSTRUCTIONS.md` within this repo. The project is broken up into three primary components:
+This project is meant to demonstrate a multi-project deployment process using a CloudFormation Custom Resource. The specific requirements are found in `INSTRUCTIONS.md` within this repo. The project is broken up into three primary components:
 
 - `weather-api/` - Lambda Function to be used with API Gateway that returns weather for Tulsa, OK from the OpenWeatherMap API
 - `weather-app/` - Simple Angular SPA that retrieves the weather data from the API and displays a subset of it on a page
